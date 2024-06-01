@@ -1,1 +1,1 @@
-Projeto desenvolvido durante as aulas da Alura no curso "Python: crie a sua primeira aplicação".
+Projetos desenvolvido durante as aulas da Alura no curso "Python: crie a sua primeira aplicação" e "Python: aplicando a Orientação a Objetos".
