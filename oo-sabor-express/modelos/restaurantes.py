@@ -40,7 +40,7 @@ class Restaurante:
         print(f'{''.ljust(22)} │ {''.ljust(20)} │ {''.ljust(20)} │')
 
         for rest in cls.restaurantes:
-            print(f'> {rest.nome.ljust(20)} │ {rest.categoria.ljust(20)} │ {rest.media_avaliacoes}{''.ljust(19)} │ {rest.ativo}')
+            print(f'> {rest.nome.ljust(20)} │ {rest.categoria.ljust(20)} │ {rest.media_avaliacoes}{''.ljust(17)} │ {rest.ativo}')
         print()
     
     # Método de instância
