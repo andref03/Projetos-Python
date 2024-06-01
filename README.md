@@ -1,1 +1,1 @@
-"# Projetos-Python" 
+Projeto desenvolvido durante as aulas da Alura no curso "Python: crie a sua primeira aplicação".
