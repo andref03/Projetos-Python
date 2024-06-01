@@ -1,3 +1,5 @@
+from modelos.avaliacao import Avaliacao
+
 class Restaurante:
     # Criando lista
     restaurantes = []
@@ -7,6 +9,7 @@ class Restaurante:
         self._nome = nome.title()
         self._categoria = categoria.upper()
         self._ativo = False
+        self._avaliacao = []
         ## Colocando a instância na lista restaurantes[]
         Restaurante.restaurantes.append(self)
 
@@ -43,5 +46,23 @@ class Restaurante:
     # Método de instância
     def alternar_estado(self):
         self._ativo = not self._ativo
+
+    # Método de instância
+    def receber_avaliacao(self, cliente='', nota=0):
+        avaliacao = Avaliacao(cliente, nota)
+        self._avaliacao.append(avaliacao)
+
+    @property
+    def media_avaliacoes(self):
+        ## Caso não haja avaliação nenhuma
+        if not self._avaliacao: 
+            return 0
+        
+        soma = sum(av._nota for av in self._avaliacao)
+        qtdd_notas = len(self._avaliacao)
+        ## Arredonda a média com 2 casas decimais
+        media = round((soma / qtdd_notas), 2)
+
+        return media
 
 
