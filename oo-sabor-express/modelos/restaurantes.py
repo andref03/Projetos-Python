@@ -36,11 +36,11 @@ class Restaurante:
         ''' Esta função é responsável por listar todos os itens da lista restaurantes[] '''
 
         print('\n>> Listando todos os restaurantes:\n')
-        print(f'{'Nome do Restaurante'.ljust(22)} │ {'Categoria'.ljust(20)} │ {'Status'}')
-        print(f'{''.ljust(22)} │ {''.ljust(20)} │')
+        print(f'{'Nome do Restaurante'.ljust(22)} │ {'Categoria'.ljust(20)} │ {'Avaliação'.ljust(20)} │ {'Status'}')
+        print(f'{''.ljust(22)} │ {''.ljust(20)} │ {''.ljust(20)} │')
 
         for rest in cls.restaurantes:
-            print(f'> {rest.nome.ljust(20)} │ {rest.categoria.ljust(20)} │ {rest.ativo}')
+            print(f'> {rest.nome.ljust(20)} │ {rest.categoria.ljust(20)} │ {rest.media_avaliacoes}{''.ljust(19)} │ {rest.ativo}')
         print()
     
     # Método de instância
@@ -60,8 +60,8 @@ class Restaurante:
         
         soma = sum(av._nota for av in self._avaliacao)
         qtdd_notas = len(self._avaliacao)
-        ## Arredonda a média com 2 casas decimais
-        media = round((soma / qtdd_notas), 2)
+        ## Arredonda a média com 1 casa decimal
+        media = round((soma / qtdd_notas), 1)
 
         return media
 
