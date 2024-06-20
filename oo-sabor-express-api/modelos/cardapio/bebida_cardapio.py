@@ -5,11 +5,15 @@ class BebidaCardapio(ItemCardapio):
         # chama o construtor da classe ItemCardapio
         super().__init__(nome_bebida, preco_bebida)
         # a descrição é própria de BebidaCardapio, não estando no ItemCardapio
-        self._descricao = descricao_bebida
+        self._descricao_bebida = descricao_bebida
 
     @property
-    def descricao(self):
-        return self._descricao
+    def descricao_bebida(self):
+        return self._descricao_bebida
 
     def __str__(self):
-        return f'Bebida: {self.nome}\nPreço: R$ {self.preco}\nDescrição: {self.descricao}\n'
+        return f'Bebida: {self.nome}\nPreço: R$ {self.preco}\nDescrição: {self.descricao_bebida}\n'
+
+    def aplicar_desconto(self):
+        # aplica desconto de 5% na bebida, se aplicar o desconto
+        self._preco -= (self._preco * 0.05)

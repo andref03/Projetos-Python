@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 
 class Restaurante:
     # Criando lista
@@ -10,6 +11,7 @@ class Restaurante:
         self._categoria = categoria.upper()
         self._ativo = False
         self._avaliacao = []
+        self._cardapio = []
         ## Colocando a instância na lista restaurantes[]
         Restaurante.restaurantes.append(self)
 
@@ -64,5 +66,21 @@ class Restaurante:
         media = round((soma / qtdd_notas), 1)
 
         return media
+    
+    def adc_item_ao_cardapio(self, item):
+        # se verdadeiro, o item foi instanciado pela Classe Mãe chamada ItemCardapio
+        if isinstance(item, ItemCardapio):
+            self._cardapio.append(item)
+    
+    @property
+    def exibir_cardapio(self):
+        print(f'Cardápio do Restaurante {self._nome}\n')
+        
+        for i, item in enumerate(self._cardapio, start=1):
+            # hasattr = "se tiver o atributo"
+            if hasattr(item, 'descricao_prato'):
+                print(f'({i}). Nome: {item._nome}\nPreço: R$ {item._preco}\nDescrição: {item._descricao_prato}\n')
+            if hasattr(item, 'descricao_bebida'):
+                print(f'({i}). Nome: {item._nome}\nPreço: R$ {item._preco}\nDescrição: {item._descricao_bebida}\n')
 
-
+            
