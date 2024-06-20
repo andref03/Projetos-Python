@@ -6,3 +6,10 @@ class PratoCardapio(ItemCardapio):
         super().__init__(nome_prato, preco_prato)
         # a descrição é própria de PratoCardapio, não estando no ItemCardapio
         self._descricao = descricao_prato
+
+    @property
+    def descricao(self):
+        return self._descricao
+
+    def __str__(self):
+        return f'Prato: {self.nome}\nPreço: R$ {self.preco}\nDescrição: {self.descricao}\n'

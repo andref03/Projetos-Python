@@ -1,4 +1,6 @@
 from modelos.restaurantes import Restaurante
+from modelos.cardapio.prato_cardapio import PratoCardapio
+from modelos.cardapio.bebida_cardapio import BebidaCardapio
 
 # Instâncias
 restaurante_1 = Restaurante(nome='Pizza Planet', categoria='Italiana') 
@@ -20,9 +22,15 @@ restaurante_3.receber_avaliacao('Jô', 9)
 restaurante_3.receber_avaliacao('João', 5.5)
 restaurante_4.receber_avaliacao('Leia', 8.5)
 
+# Adicionando itens ao cardápio
+prato_001 = PratoCardapio('Peixe empanado', 30.00, 'O melhor peixe empanado da cidade!')
+bebida_001 = BebidaCardapio('Água c/ gás', 3.50, 'Água gaseificada, de 500 ml')
+
 # Função main()
 def main():
-    Restaurante.listar_restaurantes()
+    # Restaurante.listar_restaurantes()
+    print(prato_001)
+    print(bebida_001)
 
 if __name__ == '__main__':
     main()
